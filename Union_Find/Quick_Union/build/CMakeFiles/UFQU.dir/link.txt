@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/UFQU.dir/test.cpp.o CMakeFiles/UFQU.dir/Union_Find_QU.cpp.o  -o UFQU 
