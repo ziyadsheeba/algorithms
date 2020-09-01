@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/von-neumann/ETHZ/algorithms/Union_Find/Quick_Find/src/Union_Find_QF.h
+iostream
+-
+
+/home/von-neumann/ETHZ/algorithms/Union_Find/Quick_Find/src/test.cpp
+Union_Find_QF.h
+/home/von-neumann/ETHZ/algorithms/Union_Find/Quick_Find/src/Union_Find_QF.h
+iostream
+-
+

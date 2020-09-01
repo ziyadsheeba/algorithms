@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/QFUF.dir/test.cpp.o CMakeFiles/QFUF.dir/Union_Find_QF.cpp.o  -o QFUF 
