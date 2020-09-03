@@ -1,5 +1,5 @@
 #include "Percolation.h"
-#include "Union_Find_QU.h"
+#include "Union_Find_WQU.h"
 #include "PercolationStats.h"
 #include <random>
 #include <math.h>

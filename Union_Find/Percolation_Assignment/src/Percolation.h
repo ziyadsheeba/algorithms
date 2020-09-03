@@ -1,12 +1,12 @@
 #ifndef _PERCOLATION_
 #define _PERCOLATION_
-#include "Union_Find_QU.h"
+#include "Union_Find_WQU.h"
 #include <vector>
 using namespace std;
 class Percolation{
 	private:
 		std::vector<std::vector<bool>> grid;
-		Union_Find_QU uf;
+		Union_Find_WQU uf;
 		int open_sites_count;
 		int grid_dim;
 	public:

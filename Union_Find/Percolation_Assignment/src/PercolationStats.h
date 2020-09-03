@@ -1,7 +1,7 @@
 #ifndef _PERCOLATIONSTATS_
 #define _PERCOLATIONSTATS_
 #include "Percolation.h"
-#include "Union_Find_QU.h"
+#include "Union_Find_WQU.h"
 #include <math.h>
 
 class PercolationStats{

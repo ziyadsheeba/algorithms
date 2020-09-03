@@ -1,5 +1,5 @@
 #include "Percolation.h"
-#include "Union_Find_QU.h"
+#include "Union_Find_WQU.h"
 #include <iostream>
 Percolation::Percolation(int n): uf(n*n + 2), grid_dim(n), open_sites_count(0){
 	
@@ -8,10 +8,10 @@ Percolation::Percolation(int n): uf(n*n + 2), grid_dim(n), open_sites_count(0){
 	for(int i = 0; i<n; i++){
 		
 		// connect the top virtual node to all grid elements at the top
-		uf.union_QU(n*n,i);
+		uf.union_WQU(n*n,i);
 
 		// connect the bottom virtual node to all grid elements at the bottom
-		uf.union_QU(n*n+1,n*n-1-i);
+		uf.union_WQU(n*n+1,n*n-1-i);
 	}
 }
 
@@ -36,7 +36,7 @@ void Percolation::open(int row, int col){
 				// change from row column format to the vectorized index
 				int idx_shift = from2Dto1D(row+i, col);
 				// union both nodes 
-				uf.union_QU(idx, idx_shift);				
+				uf.union_WQU(idx, idx_shift);				
 				}
 			}
 		}
@@ -47,7 +47,7 @@ void Percolation::open(int row, int col){
 					// change from row column format to the vectorized index
 					int idx_shift = from2Dto1D(row, col+i);
 					// union both nodes 
-					uf.union_QU(idx, idx_shift);				
+					uf.union_WQU(idx, idx_shift);				
 				}
 			}
 		}
@@ -62,14 +62,14 @@ bool Percolation::isFull(int row, int col){
 	
 	// change from row column format to the vectorized index
 	int idx = from2Dto1D(row, col);
-	return uf.connected_QU(grid_dim*grid_dim, idx);
+	return uf.connected_WQU(grid_dim*grid_dim, idx);
 } 
 
 int Percolation::numberOfOpenSites(){
 	return open_sites_count;
 }
 
-bool Percolation::percolates(){return uf.connected_QU(grid_dim*grid_dim, (grid_dim*grid_dim)+1);}
+bool Percolation::percolates(){return uf.connected_WQU(grid_dim*grid_dim, (grid_dim*grid_dim)+1);}
 
 int Percolation::from2Dto1D(int row, int col){
 	return (grid_dim*(row-1) + col-1);
