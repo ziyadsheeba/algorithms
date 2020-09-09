@@ -14,8 +14,8 @@ int main(){
 	cout << "Choose the number of trials for the Monte Carlo simulation" << endl;
 	cin >> trials;
 	PercolationStats percstats(grid_dim, trials);
-	cout << "Mean value for perculation threshold: " << percstats.mean() << endl;
-	cout << "Standard Deviation value for perculation threshold: " << percstats.stddev() << endl;
+	cout << "Mean value for percolation threshold: " << percstats.mean() << endl;
+	cout << "Standard Deviation value for percolation threshold: " << percstats.stddev() << endl;
 	cout << "Lower Bound value for the confidence interval: " <<  percstats.confidenceLo() << endl;
 	cout << "Upper Bound value for the confidence interval: " <<  percstats.confidenceLo() << endl;
 

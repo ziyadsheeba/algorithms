@@ -29,19 +29,17 @@ void Percolation::open(int row, int col){
 		// connect node to all open sites in the neighbourhood
 		// check if any of the neighbouring nodes are open on the grid
 		int shifts[2] = {-1,1};
-		for(int i: shifts){; 
-		//up, down
-		if(!(row+i >grid_dim || row+i <1)){
-			if(isOpen(row+i, col)){
-				// change from row column format to the vectorized index
-				int idx_shift = from2Dto1D(row+i, col);
-				// union both nodes 
-				uf.union_WQU(idx, idx_shift);				
+		for(int i: shifts){ 
+			//up, down
+			if(!(row+i >grid_dim || row+i <1)){
+				if(isOpen(row+i, col)){
+					// change from row column format to the vectorized index
+					int idx_shift = from2Dto1D(row+i, col);
+					// union both nodes 
+					uf.union_WQU(idx, idx_shift);				
 				}
 			}
-		}
-		//left, right
-		for(int i: shifts){ 
+			// right, left
 			if(!(col+i >grid_dim || col+i <1)){
 				if(isOpen(row, col+i)){
 					// change from row column format to the vectorized index
@@ -50,6 +48,7 @@ void Percolation::open(int row, int col){
 					uf.union_WQU(idx, idx_shift);				
 				}
 			}
+
 		}
 	}
 }
